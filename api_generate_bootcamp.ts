@@ -96,7 +96,7 @@ export default async function handler(
     bootcampData.updatedAt = new Date().toISOString();
 
     // Clean up temp file
-    await fs.unlink(outputPath).catch(() => {});
+    await fs.unlink(outputPath).catch(() => { });
 
     // Return success
     return res.status(200).json({
@@ -106,7 +106,7 @@ export default async function handler(
 
   } catch (error) {
     console.error('Error generating bootcamp:', error);
-    
+
     return res.status(500).json({
       success: false,
       error: error instanceof Error ? error.message : 'Unknown error occurred'

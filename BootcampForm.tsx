@@ -7,10 +7,10 @@ interface BootcampFormProps {
   loading?: boolean;
 }
 
-export const BootcampForm: React.FC<BootcampFormProps> = ({ 
-  onSubmit, 
+export const BootcampForm: React.FC<BootcampFormProps> = ({
+  onSubmit,
   onGenerateAI,
-  loading = false 
+  loading = false
 }) => {
   const [formData, setFormData] = useState<BootcampFormInput>({
     nama: '',
@@ -28,7 +28,7 @@ export const BootcampForm: React.FC<BootcampFormProps> = ({
       ...prev,
       [name]: name === 'durasi' ? parseInt(value) || 0 : value
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof BootcampFormInput]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
@@ -91,9 +91,8 @@ export const BootcampForm: React.FC<BootcampFormProps> = ({
             value={formData.nama}
             onChange={handleChange}
             placeholder="e.g., Full Stack Web Development Bootcamp"
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-              errors.nama ? 'border-red-500' : 'border-gray-300'
-            }`}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.nama ? 'border-red-500' : 'border-gray-300'
+              }`}
             disabled={loading}
           />
           {errors.nama && (
@@ -115,9 +114,8 @@ export const BootcampForm: React.FC<BootcampFormProps> = ({
               onChange={handleChange}
               min="1"
               max="24"
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-                errors.durasi ? 'border-red-500' : 'border-gray-300'
-              }`}
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.durasi ? 'border-red-500' : 'border-gray-300'
+                }`}
               disabled={loading}
             />
             {errors.durasi && (
@@ -156,9 +154,8 @@ export const BootcampForm: React.FC<BootcampFormProps> = ({
             onChange={handleChange}
             rows={4}
             placeholder="Jelaskan tujuan, target peserta, dan outcome dari bootcamp ini..."
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${
-              errors.deskripsi ? 'border-red-500' : 'border-gray-300'
-            }`}
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${errors.deskripsi ? 'border-red-500' : 'border-gray-300'
+              }`}
             disabled={loading}
           />
           {errors.deskripsi && (
@@ -235,18 +232,17 @@ export const BootcampForm: React.FC<BootcampFormProps> = ({
 // Example usage component with state management
 export const BootcampFormContainer: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [generatedData, setGeneratedData] = useState<BootcampData | null>(null);
+  const [generatedData, setGeneratedData] = useState<any>(null); // Keep raw object for reference if needed
+  const [jsonContent, setJsonContent] = useState<string>(''); // For the editable textarea
 
   const handleSubmit = (formData: BootcampFormInput) => {
     console.log('Manual form submission:', formData);
-    // Navigate to detailed form or save initial data
-    alert('Form submitted! Redirect to detailed editor...');
+    alert('Form submitted! (Manual logic to be implemented)');
   };
 
   const handleGenerateAI = async (formData: BootcampFormInput) => {
     setLoading(true);
     try {
-      // Call AI API
       const response = await fetch('/api/generate-bootcamp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -258,11 +254,14 @@ export const BootcampFormContainer: React.FC = () => {
       }
 
       const data = await response.json();
-      setGeneratedData(data);
-      
-      console.log('AI Generated Data:', data);
-      alert('Bootcamp curriculum berhasil di-generate! Check console for data.');
-      
+      if (data.success && data.data) {
+        setGeneratedData(data.data);
+        setJsonContent(JSON.stringify(data.data, null, 2));
+        alert('✅ AI Generation Successful! Please review the JSON below.');
+      } else {
+        throw new Error('Invalid response structure');
+      }
+
     } catch (error) {
       console.error('Error generating with AI:', error);
       alert('Error: ' + (error instanceof Error ? error.message : 'Unknown error'));
@@ -271,29 +270,145 @@ export const BootcampFormContainer: React.FC = () => {
     }
   };
 
+  // 1. Load JSON Feature
+  const handleLoadJson = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const content = e.target?.result as string;
+        const parsed = JSON.parse(content);
+        setGeneratedData(parsed);
+        setJsonContent(content); // Keep formatting if possible, or re-stringify: JSON.stringify(parsed, null, 2)
+        alert('✅ JSON Loaded Successfully! You can now edit and convert it.');
+      } catch (err) {
+        alert('❌ Error loading JSON: Invalid format');
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  // 2. Download JSON Feature
+  const handleDownload = () => {
+    try {
+      // Validate JSON first
+      const parsed = JSON.parse(jsonContent);
+      const blob = new Blob([JSON.stringify(parsed, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `bootcamp_${Date.now()}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      alert('❌ Invalid JSON content. Please fix errors before downloading.');
+    }
+  };
+
+  // 3. Convert to DOCX Feature
+  const handleConvertToDocx = async () => {
+    try {
+      const parsed = JSON.parse(jsonContent); // Get current state of editor
+
+      // Show loading state for button (optional: can add separate loading state)
+      const btn = document.getElementById('btn-convert-docx') as HTMLButtonElement;
+      if (btn) { btn.disabled = true; btn.innerText = '⏳ Converting...'; }
+
+      const response = await fetch('/api/convert-to-docx', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(parsed)
+      });
+
+      if (!response.ok) throw new Error('Conversion failed');
+
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `bootcamp_curriculum_${Date.now()}.docx`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+
+      if (btn) { btn.innerText = '✅ Downloaded!'; setTimeout(() => { btn.disabled = false; btn.innerText = '📄 Convert to DOCX'; }, 2000); }
+
+    } catch (err) {
+      alert('❌ Error converting to DOCX: ' + (err instanceof Error ? err.message : 'Unknown error'));
+      const btn = document.getElementById('btn-convert-docx') as HTMLButtonElement;
+      if (btn) { btn.disabled = false; btn.innerText = '📄 Convert to DOCX'; }
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-12 px-4">
+
+      {/* Load JSON Section */}
+      <div className="max-w-4xl mx-auto mb-8 p-6 bg-blue-50 rounded-lg border border-blue-200 shadow-sm">
+        <h3 className="text-lg font-bold text-blue-900 mb-4">📂 Load Existing Bootcamp JSON</h3>
+        <div className="flex gap-4 items-center">
+          <input
+            type="file"
+            accept=".json"
+            onChange={handleLoadJson}
+            className="block w-full text-sm text-gray-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-white file:text-blue-700
+                    hover:file:bg-blue-100"
+          />
+        </div>
+        <p className="text-xs text-blue-800 mt-2">Upload file JSON yang sudah ada untuk diedit atau di-convert ke DOCX.</p>
+      </div>
+
       <BootcampForm
         onSubmit={handleSubmit}
         onGenerateAI={handleGenerateAI}
         loading={loading}
       />
 
-      {/* Preview Generated Data */}
-      {generatedData && (
-        <div className="max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            ✅ Generated Bootcamp Data
-          </h2>
-          <pre className="bg-gray-100 p-4 rounded-lg overflow-auto max-h-96 text-sm">
-            {JSON.stringify(generatedData, null, 2)}
-          </pre>
-          <div className="mt-4 flex gap-4">
-            <button className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
-              📥 Download JSON
+      {/* Editor & Actions Section */}
+      {(jsonContent || generatedData) && (
+        <div className="max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg border border-gray-200">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-bold text-gray-900">
+              ✅ Result Editor
+            </h2>
+            <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+              Editable Mode
+            </div>
+          </div>
+
+          <p className="mb-2 text-gray-600 text-sm">
+            Silakan edit JSON di bawah ini sebelum menyimpan atau convert.
+          </p>
+
+          <textarea
+            value={jsonContent}
+            onChange={(e) => setJsonContent(e.target.value)}
+            className="w-full h-96 p-4 bg-gray-50 border border-gray-300 rounded-lg font-mono text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            spellCheck={false}
+          />
+
+          <div className="mt-6 flex flex-col sm:flex-row gap-4">
+            <button
+              onClick={handleDownload}
+              className="flex-1 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors flex justify-center items-center gap-2"
+            >
+              📥 Save JSON
             </button>
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-              📄 Generate DOCX
+            <button
+              id="btn-convert-docx"
+              onClick={handleConvertToDocx}
+              className="flex-1 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors flex justify-center items-center gap-2"
+            >
+              📄 Convert to DOCX
             </button>
           </div>
         </div>
