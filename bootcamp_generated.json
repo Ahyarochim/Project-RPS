@@ -1,250 +1,248 @@
 {
-  "deskripsi": "Bootcamp Data Engineer ini dirancang untuk membantu peserta menguasai keterampilan yang diperlukan untuk menjadi seorang Data Engineer yang kompeten. Selama 4 minggu, peserta akan belajar tentang pengolahan data, pengembangan pipeline data, dan penggunaan teknologi modern untuk manajemen data. Metode pembelajaran yang digunakan adalah kombinasi antara teori dan praktik, dengan proyek nyata yang akan memperkuat pemahaman peserta. Setelah menyelesaikan bootcamp ini, peserta akan memiliki kemampuan untuk membangun sistem pengolahan data yang efisien dan memiliki portofolio yang siap untuk dicantumkan dalam aplikasi kerja.",
-  "deskripsiSingkat": "Jadilah Data Engineer yang andal dalam 4 minggu di Bootcamp Data Engineer!",
+  "deskripsi": "Bootcamp Data Engineer dirancang untuk memberikan pemahaman mendalam tentang konsep dan praktik dasar di bidang rekayasa data. Dalam waktu 4 minggu, peserta akan belajar tentang pengolahan data, ETL (Extract, Transform, Load), serta dasar-dasar cloud computing. Program ini menggunakan pendekatan hybrid, menggabungkan sesi online dan offline untuk memberi pengalaman belajar yang fleksibel. Dengan mentor berpengalaman, peserta akan terlibat dalam proyek nyata yang memperkuat pemahaman mereka dan membangun portofolio. Bootcamp ini bertujuan untuk mempersiapkan peserta memasuki industri data yang terus berkembang.",
+  "deskripsiSingkat": "Bergabunglah dalam Bootcamp Data Engineer dan kuasai keterampilan fundamental dalam dunia data dalam 4 minggu.",
   "targetPeserta": {
-    "deskripsi": "Bootcamp ini ditujukan untuk individu dengan latar belakang teknis yang ingin memperdalam keterampilan dalam pengolahan data dan pengembangan sistem data.",
+    "deskripsi": "Bootcamp ini ditujukan untuk individu yang memiliki minat dalam analisis data dan teknologi, serta ingin memulai karir di bidang rekayasa data.",
     "latar_belakang": [
       "Fresh graduate IT/Computer Science",
-      "Career switcher yang ingin masuk industri teknologi",
-      "Junior Data Analyst yang ingin beralih ke Data Engineering"
+      "Career switcher yang ingin masuk tech industry",
+      "Junior developer yang ingin upgrade skill"
     ],
     "prasyarat_teknis": [
-      "Pemahaman dasar SQL dan bahasa pemrograman (minimal 1 bahasa)",
+      "Pemahaman dasar programming (minimal 1 bahasa)",
       "Familiar dengan command line/terminal",
       "Memiliki laptop dengan spesifikasi minimum RAM 8GB"
     ],
     "prasyarat_soft_skill": [
       "Komitmen waktu 20-30 jam per minggu",
-      "Keterampilan analisis dan problem solving",
-      "Kemauan untuk belajar mandiri dan bekerja dalam tim"
+      "Problem solving mindset",
+      "Kemauan belajar mandiri dan kolaboratif"
     ]
   },
   "learningOutcomes": [
     {
       "kode": "LO-1",
-      "pernyataan": "Peserta mampu merancang dan mengimplementasikan pipeline data menggunakan alat ETL",
+      "pernyataan": "Peserta mampu memahami dan menerapkan konsep dasar rekayasa data.",
       "kategori": "Technical"
     },
     {
       "kode": "LO-2",
-      "pernyataan": "Peserta mampu berkolaborasi dalam tim menggunakan alat manajemen proyek serta Git",
+      "pernyataan": "Peserta dapat bekerja efektif dalam tim dengan menggunakan alat kolaborasi modern.",
       "kategori": "Soft Skill"
     },
     {
       "kode": "LO-3",
-      "pernyataan": "Peserta memiliki portofolio berisi 3 proyek terkait pengolahan data untuk aplikasi kerja",
+      "pernyataan": "Peserta memiliki portofolio dengan minimal 2 proyek yang relevan untuk aplikasi kerja.",
       "kategori": "Portfolio"
     }
   ],
   "minggu": [
     {
       "mingguKe": 1,
-      "tema": "Pengenalan Data Engineering dan Alat Penting",
+      "tema": "Dasar-Dasar Data Engineering",
       "learningOutcomes": [
         "LO-1"
       ],
       "materiPokok": [
-        "Pengenalan konsep Data Engineering",
-        "Alat dan teknologi yang umum digunakan (SQL, Python, ETL tools)",
-        "Pengantar basis data dan manajemen data"
+        "Pengantar rekayasa data dan peran data engineer",
+        "Jenis-jenis data dan cara pengolahannya",
+        "Dasar-dasar database dan SQL"
       ],
       "metodePembelajaran": {
         "metode": "Lecture + Workshop",
-        "deskripsi": "Kombinasi antara kuliah yang memberikan pemahaman teoretis dan workshop yang memberikan pengalaman langsung dalam menggunakan alat-alat penting di bidang Data Engineering.",
-        "aktivitas": "Peserta akan mengikuti kuliah interaktif tentang konsep dasar Data Engineering dan berlatih menggunakan SQL dan Python dalam workshop praktis."
+        "deskripsi": "Kombinasi sesi teori untuk memahami konsep dasar rekayasa data dan workshop praktis untuk memperdalam pengetahuan melalui aplikasi nyata.",
+        "aktivitas": "Mengikuti sesi lecture interaktif, berpartisipasi dalam diskusi, serta mengerjakan latihan SQL untuk memperkuat pemahaman tentang database dan pengolahan data."
       },
       "waktu": "Lecture 2x120', Workshop 3x180'",
-      "pengalamanBelajar": "Peserta akan mendapatkan pemahaman mendalam tentang Data Engineering, belajar menggunakan alat-alat penting, serta praktik langsung yang akan membekali mereka dengan keterampilan dasar dalam pengolahan data.",
+      "pengalamanBelajar": "Peserta akan mendapatkan pemahaman yang kuat tentang apa itu rekayasa data, jenis-jenis data yang ada, serta bagaimana cara mengolahnya menggunakan SQL, yang merupakan keterampilan dasar yang penting dalam bidang ini.",
       "penilaian": {
-        "kriteria": "Penilaian akan didasarkan pada kelengkapan pemahaman konsep, keaktifan dalam diskusi, dan kemampuan peserta dalam menyelesaikan tugas praktis di workshop dengan baik.",
+        "kriteria": "Penilaian dilakukan berdasarkan partisipasi dalam diskusi, keberhasilan dalam latihan SQL, dan kemampuan menjelaskan konsep-konsep dasar secara jelas dan logis.",
         "bobot": 10
       }
     },
     {
       "mingguKe": 2,
-      "tema": "Database Management dan SQL",
-      "learningOutcomes": [
-        "LO-1"
-      ],
-      "materiPokok": [
-        "Desain dan model basis data",
-        "Dasar-dasar SQL dan query kompleks",
-        "Penggunaan indeks dan optimasi query"
-      ],
-      "metodePembelajaran": {
-        "metode": "Project-Based Learning",
-        "deskripsi": "Peserta akan terlibat dalam proyek yang berfokus pada penerapan SQL untuk membangun dan mengelola basis data, dengan bimbingan instruktur untuk memastikan pemahaman yang tepat.",
-        "aktivitas": "Mengembangkan basis data untuk sebuah aplikasi sederhana menggunakan SQL, serta melakukan query dan analisis data untuk mendapatkan wawasan yang dibutuhkan."
-      },
-      "waktu": "Workshop 4x180', Project Work 2x120'",
-      "project": {
-        "nama": "Database untuk Aplikasi Sederhana",
-        "deskripsi": "Membangun dan mengelola basis data menggunakan SQL untuk aplikasi yang memerlukan pengolahan data.",
-        "deliverables": [
-          "Dokumentasi desain basis data",
-          "Kumpulan query SQL yang digunakan",
-          "Analisis data dari hasil query"
-        ],
-        "teknologi": [
-          "SQL",
-          "PostgreSQL/MySQL",
-          "Git"
-        ]
-      },
-      "pengalamanBelajar": "Peserta akan belajar merancang basis data yang efisien dan melakukan query yang kompleks, serta memahami bagaimana mengoptimalkan kinerja basis data yang mereka buat.",
-      "penilaian": {
-        "kriteria": "Penilaian akan mencakup kualitas desain basis data, keakuratan dan efisiensi query yang ditulis, serta dokumentasi yang jelas dan terstruktur dari proyek yang dikerjakan.",
-        "bobot": 15
-      }
-    },
-    {
-      "mingguKe": 3,
-      "tema": "Data Pipeline dan ETL",
+      "tema": "Pengolahan Data dan ETL",
       "learningOutcomes": [
         "LO-1"
       ],
       "materiPokok": [
         "Konsep ETL (Extract, Transform, Load)",
-        "Penggunaan alat ETL seperti Apache Airflow",
-        "Membangun pipeline data dari sumber hingga analisis"
+        "Tools untuk ETL seperti Apache NiFi dan Talend",
+        "Penerapan ETL pada dataset nyata"
       ],
       "metodePembelajaran": {
-        "metode": "Workshop + Case Study",
-        "deskripsi": "Peserta akan mengikuti workshop yang mengajarkan mereka cara membangun pipeline data dengan alat ETL serta menganalisis studi kasus nyata untuk memahami tantangan yang dihadapi dalam pengelolaan data.",
-        "aktivitas": "Peserta akan membangun pipeline data menggunakan Apache Airflow dan menganalisis kasus nyata yang menunjukkan aplikasi ETL dalam industri."
+        "metode": "Workshop + Project",
+        "deskripsi": "Peserta akan mengikuti workshop mendalam mengenai alat ETL, diikuti dengan proyek untuk menerapkan teknik yang dipelajari pada data nyata.",
+        "aktivitas": "Mengerjakan proyek kelompok untuk membangun pipeline ETL menggunakan dataset yang disediakan, serta mendokumentasikan setiap langkah dalam proses tersebut."
       },
-      "waktu": "Workshop 4x180', Case Study 2x120'",
-      "pengalamanBelajar": "Peserta akan memahami alur kerja ETL dan cara membangun pipeline data, serta belajar dari studi kasus untuk menyelesaikan masalah yang sering muncul dalam pengolahan data.",
+      "waktu": "Workshop 4x180', Project Work 2x120'",
+      "project": {
+        "nama": "Membangun Pipeline ETL",
+        "deskripsi": "Membangun pipeline ETL menggunakan alat yang dipelajari untuk mengolah dataset nyata.",
+        "deliverables": [
+          "Dokumentasi proses ETL",
+          "Pipeline yang berfungsi dengan baik",
+          "Presentasi hasil ke kelompok lain"
+        ],
+        "teknologi": [
+          "Apache NiFi",
+          "Talend",
+          "SQL",
+          "Python"
+        ]
+      },
+      "pengalamanBelajar": "Peserta akan belajar cara membangun pipeline ETL dari awal hingga akhir, memahami proses ekstraksi, transformasi, dan pemuatan data, serta bagaimana menggunakan alat yang relevan untuk mencapai tujuan tersebut.",
       "penilaian": {
-        "kriteria": "Penilaian akan didasarkan pada kemampuan peserta dalam membangun pipeline yang fungsional, pemecahan masalah dalam studi kasus, dan presentasi hasil kerja mereka.",
-        "bobot": 25
+        "kriteria": "Penilaian mencakup keberhasilan dalam implementasi pipeline, kualitas dokumentasi, dan presentasi hasil proyek, serta kemampuan bekerja dalam tim.",
+        "bobot": 20
+      }
+    },
+    {
+      "mingguKe": 3,
+      "tema": "Pengantar Cloud Computing untuk Data",
+      "learningOutcomes": [
+        "LO-1"
+      ],
+      "materiPokok": [
+        "Dasar-dasar cloud computing dan layanan yang tersedia",
+        "Penyimpanan data di cloud (AWS S3, Google Cloud Storage)",
+        "Menggunakan alat seperti AWS Redshift untuk analitik data"
+      ],
+      "metodePembelajaran": {
+        "metode": "Lecture + Case Study",
+        "deskripsi": "Sesi teori diikuti dengan studi kasus nyata tentang bagaimana perusahaan menggunakan cloud untuk pengolahan data, memberikan wawasan praktis yang berharga.",
+        "aktivitas": "Menganalisis kasus penggunaan cloud computing dalam industri data, serta mendiskusikan keuntungan dan tantangan yang dihadapi oleh perusahaan saat beralih ke cloud."
+      },
+      "waktu": "Lecture 2x120', Case Study 3x180'",
+      "pengalamanBelajar": "Peserta akan mendapatkan wawasan mendalam tentang bagaimana cloud computing mengubah cara data dikelola dan dianalisis, serta belajar cara menggunakan layanan cloud untuk kebutuhan data engineering.",
+      "penilaian": {
+        "kriteria": "Penilaian didasarkan pada partisipasi dalam diskusi kasus, kemampuan menganalisis keuntungan dan tantangan cloud, serta pemahaman konsep-konsep dasar cloud computing.",
+        "bobot": 20
       }
     },
     {
       "mingguKe": 4,
-      "tema": "Proyek Akhir dan Presentasi",
+      "tema": "Proyek Akhir dan Persiapan Karir",
       "learningOutcomes": [
-        "LO-2",
-        "LO-3"
+        "LO-3",
+        "LO-2"
       ],
       "materiPokok": [
-        "Integrasi semua konsep yang dipelajari",
-        "Persiapan dan presentasi proyek akhir",
-        "Evaluasi peer dan umpan balik"
+        "Membangun proyek akhir berbasis data",
+        "Persiapan aplikasi kerja dan interview di industri data",
+        "Membangun portofolio yang menarik"
       ],
       "metodePembelajaran": {
-        "metode": "Project-Based Learning + Presentation",
-        "deskripsi": "Peserta akan mengerjakan proyek akhir yang mengintegrasikan semua pengetahuan yang telah diperoleh selama bootcamp, diakhiri dengan presentasi proyek kepada instruktur dan peserta lain.",
-        "aktivitas": "Membuat proyek akhir yang mencakup pengolahan dan analisis data serta mempresentasikan hasilnya kepada audiens, menerima umpan balik untuk pengembangan lebih lanjut."
+        "metode": "Project-Based + Workshop",
+        "deskripsi": "Peserta akan bekerja pada proyek akhir yang mengintegrasikan semua pengetahuan yang telah dipelajari, diikuti dengan workshop untuk memperkuat keterampilan persiapan karir.",
+        "aktivitas": "Mengembangkan proyek akhir yang menunjukkan kemampuan peserta dalam rekayasa data, serta berpartisipasi dalam sesi workshop untuk menyusun CV dan persiapan interview."
       },
-      "waktu": "Project Work 5x180', Presentation 2x120'",
+      "waktu": "Project Work 4x180', Workshop 2x120'",
       "project": {
-        "nama": "Proyek Akhir Data Engineering",
-        "deskripsi": "Membangun solusi pengolahan data dari awal hingga akhir, termasuk pipeline ETL dan analisis data.",
+        "nama": "Final Data Engineering Project",
+        "deskripsi": "Membangun proyek data yang mengintegrasikan konsep ETL, penyimpanan cloud, dan analitik.",
         "deliverables": [
-          "Dokumentasi proyek lengkap",
-          "Pipeline data yang berfungsi",
-          "Presentasi hasil proyek"
+          "Proyek akhir yang berfungsi dengan baik",
+          "Dokumentasi proyek dan presentasi",
+          "Portofolio proyek yang siap untuk aplikasi kerja"
         ],
         "teknologi": [
-          "SQL",
+          "AWS",
           "Python",
-          "Apache Airflow",
-          "Git"
+          "SQL",
+          "Data Visualization Tools"
         ]
       },
-      "pengalamanBelajar": "Peserta akan belajar cara mengintegrasikan semua aspek Data Engineering, membangun proyek komprehensif, dan mengasah kemampuan presentasi serta kolaborasi tim.",
+      "pengalamanBelajar": "Peserta akan mengembangkan proyek akhir yang menunjukkan keterampilan rekayasa data mereka, serta mendapatkan pengalaman langsung dalam membangun portofolio yang menarik untuk pencarian kerja di bidang ini.",
       "penilaian": {
-        "kriteria": "Penilaian proyek akhir akan meliputi kompleksitas teknis, inovasi, kesiapan produksi, dan kualitas presentasi yang disampaikan di depan audiens.",
-        "bobot": 35
+        "kriteria": "Penilaian akan dilakukan berdasarkan kualitas proyek akhir, presentasi, dokumentasi, serta kemampuan peserta dalam menjawab pertanyaan seputar proyek mereka.",
+        "bobot": 50
       }
     }
   ],
   "assessment": [
     {
       "nama": "Participation & Attendance",
-      "deskripsi": "Kehadiran aktif dalam sesi dan partisipasi dalam diskusi kelompok",
+      "deskripsi": "Kehadiran aktif dalam sesi dan kontribusi dalam diskusi kelompok.",
       "bobot": 10,
-      "metode": "Observasi instruktur dan tracking kehadiran",
+      "metode": "Observasi instruktur dan tracking kehadiran.",
       "kriteria": [
-        "Kehadiran minimum 80% dari total sesi",
-        "Aktif bertanya dan berkontribusi dalam diskusi",
-        "Mendukung peserta lain dalam kegiatan kelompok"
+        "Kehadiran minimum 80% dari total sesi.",
+        "Aktif bertanya dan berdiskusi selama sesi.",
+        "Memberikan dukungan kepada peserta lain."
       ]
     },
     {
       "nama": "Weekly Assignments",
-      "deskripsi": "Tugas mingguan untuk memperkuat pemahaman materi yang diajarkan",
-      "bobot": 25,
-      "metode": "Code review dan peer evaluation",
+      "deskripsi": "Tugas mingguan untuk memperkuat pemahaman materi.",
+      "bobot": 20,
+      "metode": "Code review dan evaluasi tugas.",
       "kriteria": [
-        "Ketepatan waktu dalam pengumpulan tugas",
-        "Kualitas dan best practices dalam coding",
-        "Fungsi dan cakupan tes yang memadai"
+        "Ketepatan waktu pengumpulan tugas.",
+        "Kualitas dan kejelasan solusi yang diberikan.",
+        "Kemampuan menerapkan konsep yang telah diajarkan."
       ]
     },
     {
       "nama": "Mini Projects",
-      "deskripsi": "Proyek kecil untuk menerapkan keterampilan yang dipelajari dalam konteks nyata",
-      "bobot": 30,
-      "metode": "Evaluasi proyek dan review dari teman sejawat",
+      "deskripsi": "Proyek kecil untuk penerapan keterampilan yang dipelajari.",
+      "bobot": 20,
+      "metode": "Evaluasi proyek oleh instruktur dan peer review.",
       "kriteria": [
-        "Kelengkapan dalam memenuhi semua requirement proyek",
-        "Struktur kode yang bersih dan mudah dipahami",
-        "Kualitas antarmuka pengguna dan pengalaman pengguna yang baik",
-        "Kualitas dokumentasi yang disediakan"
+        "Implementasi semua requirement proyek.",
+        "Kualitas kode dan dokumentasi yang disertakan.",
+        "Kemampuan bekerja dalam tim untuk menyelesaikan proyek."
       ]
     },
     {
       "nama": "Final Capstone Project",
-      "deskripsi": "Proyek akhir yang komprehensif sebagai bagian dari portofolio",
-      "bobot": 35,
-      "metode": "Presentasi, demo, dan review kode",
+      "deskripsi": "Proyek akhir yang komprehensif sebagai bagian dari portofolio.",
+      "bobot": 50,
+      "metode": "Presentasi, demo, dan evaluasi kode.",
       "kriteria": [
-        "Kompleksitas teknis proyek",
-        "Inovasi dan kreativitas dalam solusi",
-        "Kesiapan untuk digunakan dalam produksi",
-        "Kualitas presentasi dan demo yang disampaikan"
+        "Kualitas teknis dan kompleksitas proyek.",
+        "Inovasi dan kreativitas dalam penyelesaian masalah.",
+        "Kesiapan proyek untuk digunakan dalam produksi."
       ]
     }
   ],
   "instruktur": [
     {
-      "nama": "John Doe",
+      "nama": "Dr. Arif Budiman",
       "expertise": [
         "Data Engineering",
-        "Big Data",
-        "Cloud Computing"
+        "Cloud Computing",
+        "Big Data"
       ],
       "peran": "Lead Instructor"
     },
     {
-      "nama": "Jane Smith",
+      "nama": "Nina Sari",
       "expertise": [
         "Data Analysis",
-        "SQL",
-        "Python"
+        "ETL Processes",
+        "Data Visualization"
       ],
       "peran": "Assistant Instructor"
     }
   ],
   "toolsResources": {
     "software": [
-      "VS Code / IDE pilihan",
-      "Git",
-      "PostgreSQL/MySQL",
-      "Apache Airflow",
+      "Jupyter Notebook",
+      "SQL Server Management Studio",
+      "Apache NiFi",
       "Python"
     ],
     "platform": [
-      "GitHub untuk manajemen proyek",
+      "GitHub",
       "Slack untuk komunikasi",
       "Zoom untuk sesi online",
       "LMS untuk materi dan tugas"
     ],
     "akun_diperlukan": [
       "GitHub account",
-      "Cloud provider account (AWS/Azure)",
+      "AWS Free Tier account",
       "Slack workspace"
     ]
   },
@@ -253,22 +251,22 @@
     "syarat_kelulusan": [
       "Nilai akhir minimal 70%",
       "Kehadiran minimal 80%",
-      "Menyelesaikan proyek akhir",
-      "Portofolio dengan minimal 3 proyek"
+      "Menyelesaikan proyek akhir.",
+      "Portofolio dengan minimal 2 proyek."
     ],
     "nilai_minimal": 70,
     "benefit": [
-      "Sertifikat resmi sebagai bukti penyelesaian",
-      "Portofolio proyek siap untuk aplikasi kerja",
-      "Akses ke jaringan alumni",
-      "Sesi bimbingan karir"
+      "Sertifikat resmi completion.",
+      "Portofolio proyek siap untuk aplikasi kerja.",
+      "Akses ke komunitas alumni.",
+      "Sesi bimbingan karir."
     ]
   },
   "referensi": [
-    "Data Engineering on Google Cloud - Coursera",
-    "DataCamp - https://www.datacamp.com",
-    "Apache Airflow Documentation - https://airflow.apache.org/docs/",
-    "SQL for Data Science - Coursera",
-    "Python for Data Analysis - Wes McKinney"
+    "Coursera - Data Engineering Courses: https://www.coursera.org/browse/data-science/data-engineering",
+    "DataCamp - Data Engineering Courses: https://www.datacamp.com/courses/tech:data-engineering",
+    "AWS Documentation: https://aws.amazon.com/documentation/",
+    "SQL Bolt: https://sqlbolt.com/",
+    "Kaggle Datasets: https://www.kaggle.com/datasets"
   ]
 }

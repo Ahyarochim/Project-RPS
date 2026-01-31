@@ -40,7 +40,10 @@ app.post('/api/generate-bootcamp', async (req, res) => {
     await fs.mkdir(path.join(__dirname, 'temp'), { recursive: true });
 
     // Build command
-    const context = additional_context ? additional_context.replace(/"/g, '\\"') : '';
+    // Sanitize context for shell: remove newlines and escape quotes
+    const context = additional_context
+      ? additional_context.replace(/[\r\n]+/g, ' ').replace(/"/g, '\\"')
+      : '';
     const pythonCmd = [
       '"C:\\Users\\Asus\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"',
       `"${scriptPath}"`,
