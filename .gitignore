@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+bootcamp-generator/node_modules/
+
+# Next.js build output
+.next/
+
+# Environment files
+.env.local
+
+# Temp files
+temp/
+
+# Logs
+*.log
